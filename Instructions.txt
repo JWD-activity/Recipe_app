@@ -1,0 +1,35 @@
+Instructions:
+Create a simple recipe app. The app can be a command-line app or a web app. You may use
+JavaScript libraries but they are not a requirement, HTML/CSS and vanilla JS are sufficient.
+This app should satisfy the following minimum requirements:
+1. Add recipes that have names and ingredients.
+2. Show a list of all recipes
+3. Delete recipes
+4. Recipes are saved in the browser's local storage.
+
+
+Requirements:
+1. The code should be readable, reusable, and easy to modify. We're looking for productionquality code.
+2. A detailed Readme file which includes the following:
+1. Installation instructions
+a. Write out all of the steps to run your app locally
+2. Discussion of technologies used
+a. make a list of the technologies you used including frameworks and libraries.
+3. A section describing the requirements and how you met them.
+
+
+1) Load local storage 
+2) Render Recipe
+
+3) Add Recipe click
+- form displays 
+- user inputs are valid then allow to submit
+- save a new recipe into local storage
+- displays a new recipe
+
+4) Delete recipes click
+- find right ID of a recipe what user want to delete
+- delete from local storage
+- display page re-render
+
+https://www.sitepoint.com/css-viewport-units-quick-start/
