@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS ------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons ------>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!--------------CSS ------>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Recipe Book</title>
+  </head>
+  <body class="position-relative">
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary text-uppercase"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      add recipe
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header pb-1 border-0">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- Recipe Data--------------------------->
+              <div class="col-sm-12 col-md-6">
+                <ul class="recipe-data">
+                  <h5 class="text-uppercase mb-4">Recipe Data</h5>
+                  <form>
+                    <!-- Title--------------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-2">
+                        <label class="form-label">Title</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-9">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="recipeTitle"
+                          placeholder="min"
+                        />
+                      </div>
+                    </div>
+                    <!-- Prep time------------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-2">
+                        <label class="form-label">Prep time</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-9">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="prepTime"
+                          placeholder="step/min"
+                        />
+                      </div>
+                    </div>
+                    <!-- Servings--------------------------->
+                    <div class="row g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-2">
+                        <label class="form-label">Servings</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-9">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="servings"
+                          placeholder="step/min"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </ul>
+              </div>
+              <!-- Ingredients--------------------------->
+              <div class="col-sm-12 col-md-6">
+                <ul class="recipe-data">
+                  <h5 class="text-uppercase mb-4">Ingredients</h5>
+                  <form>
+                    <!-- Ingredient 1-------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-3">
+                        <label class="form-label">Ingredient 1</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-8">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="recipeTitle"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Ingredient 2-------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-3">
+                        <label class="form-label">Ingredient 2</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-8">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="prepTime"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Ingredient 3-------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-3">
+                        <label class="form-label">Ingredient 3</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-8">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="servings"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Ingredient 4-------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-3">
+                        <label class="form-label">Ingredient 4</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-8">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="servings"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <!-- Ingredient 5-------------------->
+                    <div class="row mb-3 g-2 align-items-center form_row">
+                      <div class="col-sm-12 col-xl-3">
+                        <label class="form-label">Ingredient 5</label>
+                      </div>
+                      <div class="col-sm-12 col-xl-8">
+                        <input
+                          class="form_input form-control"
+                          aria-describedby="servings"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Ingredient 6-------------------->
+                  <div class="row mb-3 g-2 align-items-center form_row">
+                    <div class="col-sm-12 col-xl-3">
+                      <label class="form-label">Ingredient 6</label>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
+                      <input
+                        class="form_input form-control"
+                        aria-describedby="servings"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-primary">ADD RECIPE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
