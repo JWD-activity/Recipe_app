@@ -21,6 +21,7 @@ ul:last-child {
 
 .delete-button:hover {
   color: #f48982;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1200px) {

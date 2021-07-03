@@ -14,7 +14,7 @@ formElement.addEventListener('submit', function (e) {
   const data = Object.fromEntries(dataArr);
 
   // console.log(dataArr);
-  // console.log(data);
+  console.log(data);
   $('.btn-closemodal').trigger('click');
   recipeManager.addRecipe(data);
   recipeManager.save();
@@ -26,7 +26,6 @@ recipeList.addEventListener('click', event => {
     const parentEl = event.target.closest('.preview-container');
     let recipeId = Number(parentEl.dataset.recipeId);
     const recipe = recipeManager.getRecipeById(recipeId);
-    console.log(recipe);
     recipeManager.renderRecipeview(recipe);
   }
 

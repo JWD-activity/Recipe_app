@@ -35,9 +35,22 @@ const createRecipeViewHtml = (
   const html = `
   <div class="py-3 px-5">
     <h4 class="pb-3">Title: ${title}</h4>
-      <p>Servings: ${servings}</p>
-      <p>Prep time: ${prepTime} min</p>
-      <p>Ingredient: ${ing1}</p>
+      <h5>Servings</h5>
+        <p>${servings}</p>
+      <h5>Prep time</h5>
+        <p>${prepTime} min</p>
+      <h5>Ingredient</h5>
+      <ul>
+        
+        <li>${ing1}</li>
+        <li>${ing2}</li>
+        <li>${ing3}</li>
+        <li>${ing4}</li>
+        <li>${ing5}</li>
+        <li>${ing6}</li>
+      </ul>
+      
+      
   </div>
   `;
   return html;
@@ -76,6 +89,7 @@ class RecipeManager {
 
   // Render Method
   renderRecipeview(recipe) {
+    console.log(recipe);
     if (!recipe) {
       document.getElementById('recipe-view').innerHTML = '';
       return;
@@ -86,12 +100,12 @@ class RecipeManager {
       recipe.title,
       recipe.prepTime,
       recipe.servings,
-      recipe.ing1,
-      recipe.ing2,
-      recipe.ing3,
-      recipe.ing4,
-      recipe.ing5,
-      recipe.ing6
+      recipe.ingredient1,
+      recipe.ingredient2,
+      recipe.ingredient3,
+      recipe.ingredient4,
+      recipe.ingredient5,
+      recipe.ingredient6
     );
 
     console.log(recipeHtml);
