@@ -2,9 +2,18 @@
 // Create recipe instance
 const recipeManager = new RecipeManager();
 recipeManager.load();
-recipeManager.render();
+recipeManager.renderPreview();
 
+const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
+const previewLink = document.getElementsByClassName('recipe-list');
+
+// [...previewLink].forEach(link =>
+//   link.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     console.log(1);
+//   })
+// );
 
 formElement.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -17,4 +26,14 @@ formElement.addEventListener('submit', function (e) {
   recipeManager.addRecipe(data);
   recipeManager.save();
   recipeManager.render();
+});
+
+recipeList.addEventListener('click', event => {
+  if (event.target.classList.contains('preview-link')) {
+    const parentEl = event.target.closest('.preview');
+    let recipeId = Number(parentEl.dataset.recipeId);
+    const recipe = recipeManager.getRecipeById(recipeId);
+    // console.log(recipe);
+    recipeManager.renderRecipeview(recipe);
+  }
 });

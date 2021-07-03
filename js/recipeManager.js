@@ -1,15 +1,4 @@
-const createPreviewHtml = (
-  id,
-  title,
-  prepTime,
-  servings,
-  ing1,
-  ing2,
-  ing3,
-  ing4,
-  ing5,
-  ing6
-) => {
+const createPreviewHtml = (id, title) => {
   const html = `
   <li class="preview" data-recipe-id="${id}">
     <a class="preview-link d-flex" href="#">
@@ -62,31 +51,44 @@ class RecipeManager {
   }
 
   // Render Method
-  render() {
+  renderPreview() {
     // declare status arrays to categorise each task
-    let recipeHtmlList = [];
+    let previewHtmlList = [];
 
     this.recipes.forEach(recipe => {
-      let recipeHtml = createPreviewHtml(
-        recipe.id,
-        recipe.title,
-        recipe.prepTime,
-        recipe.servings,
-        recipe.ing1,
-        recipe.ing2,
-        recipe.ing3,
-        recipe.ing4,
-        recipe.ing5,
-        recipe.ing6
-      );
+      let previewHtml = createPreviewHtml(recipe.id, recipe.title);
 
       // Push recipe into array
-      recipeHtmlList.push(recipeHtml);
+      previewHtmlList.push(previewHtml);
     });
     // Join list and insert them into the approriate div tag
-    let recipeHtml = recipeHtmlList.join('\n');
-    document.getElementById('recipe-preview').innerHTML = recipeHtml;
+    let previewHtml = previewHtmlList.join('\n');
+    document.getElementById('recipe-preview').innerHTML = previewHtml;
   }
+
+  // Render Method
+  renderRecipeview(recipe) {
+    // console.log(recipeId);
+    let recipeHtml = createRecipeViewHtml(
+      recipe.id,
+      recipe.title,
+      recipe.prepTime,
+      recipe.servings,
+      recipe.ing1,
+      recipe.ing2,
+      recipe.ing3,
+      recipe.ing4,
+      recipe.ing5,
+      recipe.ing6
+    );
+
+    console.log(recipeHtml);
+    document.getElementById('recipe-view').innerHTML = recipeHtml;
+  }
+
+  // Join list and insert them into the approriate div tag
+  // let recipeHtml = recipeHtmlList.join('\n');
+  // document.getElementById('recipe-info').innerHTML = recipeHtmlList;
 
   // Save Method
   save() {
@@ -114,5 +116,27 @@ class RecipeManager {
       //Convert the currentId to a number before storing in this.currentId
       this.currentId = parseInt(currentId);
     }
+  }
+
+  // Get recipe by the id
+  getRecipeById(recipeId) {
+    let foundRecipe;
+    this.recipes.find(recipe => {
+      if (recipe.id === recipeId) {
+        foundRecipe = recipe;
+      }
+    });
+    return foundRecipe;
+  }
+
+  // Delete task by id
+  deleteTask(recipeId) {
+    let newRecipeId = [];
+    this.recipes.forEach(recipe => {
+      if (recipe.id !== recipeId) {
+        newRecipes.push(recipe);
+      }
+    });
+    this.recipes = newRecipes;
   }
 }
