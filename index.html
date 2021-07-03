@@ -27,7 +27,7 @@
     <!-- Button trigger modal ----------->
     <button
       type="button"
-      class="btn btn-primary text-uppercase"
+      class="btn btn-primary text-uppercase btn-closemodal"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
@@ -126,7 +126,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient1"
-                        name="Ingredient-1"
+                        name="ingredient-1"
                         type="text"
                         placeholder=""
                       />
@@ -143,7 +143,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient2"
-                        name="Ingredient-2"
+                        name="ingredient-2"
                         type="text"
                         placeholder=""
                       />
@@ -160,7 +160,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient3"
-                        name="Ingredient-3"
+                        name="ingredient-3"
                         type="text"
                         placeholder=""
                       />
@@ -177,7 +177,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient4"
-                        name="Ingredient-4"
+                        name="ingredient-4"
                         type="text"
                         placeholder=""
                       />
@@ -194,7 +194,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient5"
-                        name="Ingredient-5"
+                        name="ingredient-5"
                         type="text"
                         placeholder=""
                       />
@@ -211,7 +211,7 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="Ingredient6"
-                        name="Ingredient-6"
+                        name="ingredient-6"
                         type="text"
                         placeholder=""
                       />
@@ -234,11 +234,35 @@
         </div>
       </div>
     </div>
+    <!-- Recipe List---------------------->
+    <div class="row">
+      <div class="col-6 recipe-list">
+        <ul id="recipe-preview" class="list-unstyled"></ul>
+      </div>
+      <div class="col-6 recipe" id="recipe-view">
+        
+      </div>
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
     <script src="js/recipeManager.js"></script>

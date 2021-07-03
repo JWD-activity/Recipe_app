@@ -4,7 +4,9 @@
 .form_row {
   margin-bottom: 3rem;
 }
-
+a {
+  text-decoration: none;
+}
 ul:last-child {
   padding-bottom: 1.5rem;
 }
