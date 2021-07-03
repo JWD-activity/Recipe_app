@@ -2,13 +2,16 @@
 import preview from './view/preview.js';
 import recipeView from './view/recipeView.js';
 
-preview.load();
-preview.renderPreview();
-
+// Selectors
 const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
-// // const previewLink = document.getElementsByClassName('recipe-list');
 
+// Load recipes form local storage
+preview.load();
+// Render recipe list on the screen
+preview.renderPreview();
+
+// Sumbit event handler
 formElement.addEventListener('submit', function (e) {
   e.preventDefault();
   const dataArr = [...new FormData(formElement)];
@@ -20,21 +23,26 @@ formElement.addEventListener('submit', function (e) {
   preview.renderPreview();
 });
 
+// Click event handler of recipe list
 recipeList.addEventListener('click', event => {
-  if (event.target.classList.contains('preview-link')) {
-    const parentEl = event.target.closest('.preview-container');
-    let recipeId = Number(parentEl.dataset.recipeId);
-    const recipe = preview.getRecipeById(recipeId);
+  const listItem = event.target.classList.contains('preview-link');
+  const deleteBtn = event.target.classList.contains('delete-button');
+  const parentEl = event.target.closest('.preview-container');
+
+  // When list item is clicked
+  if (listItem) {
+    const recipe = preview.getRecipeById(Number(parentEl.dataset.recipeId));
     recipeView.renderRecipeview(recipe);
   }
 
-  if (event.target.classList.contains('delete-button')) {
-    const parentEl = event.target.closest('.preview-container');
-    // console.log(parentEl);
+  // When delete btton is clicked
+  if (deleteBtn) {
     let recipeId = Number(parentEl.dataset.recipeId);
     preview.deleteRecipe(recipeId);
     const recipe = preview.getRecipeById(recipeId);
+    // Remove delete item and save to local storage
     preview.save();
+    // Re-render preview list and recipe info view
     preview.renderPreview();
     recipeView.renderRecipeview(recipe);
   }

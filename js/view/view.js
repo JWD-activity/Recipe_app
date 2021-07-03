@@ -4,33 +4,30 @@ export default class View {
     this.currentId = currentId;
   }
 
+  // Function to add a new recipe
   addRecipe(inputData) {
-    // increment id
+    // Increment id
     let id = this.currentId++;
     inputData['id'] = id;
-    // push to recipes array
+    // Push to recipes array
     this.recipes.push(inputData);
-    console.log(this.recipes);
   }
 
+  // Function to render a prevew list
   renderPreview() {
-    // declare status arrays to categorise each task
     let previewHtmlList = [];
-
     this.recipes.forEach(recipe => {
       let previewHtml = this.createPreviewHtml(recipe.id, recipe.title);
-
       // Push recipe into array
       previewHtmlList.push(previewHtml);
     });
-    // Join list and insert them into the approriate div tag
+    // Join list and insert them into div tag
     let previewHtml = previewHtmlList.join('\n');
     document.getElementById('recipe-preview').innerHTML = previewHtml;
   }
 
-  // Render Method
+  // Function to render a preview list
   renderRecipeview(recipe) {
-    // console.log(recipe);
     if (!recipe) {
       document.getElementById('recipe-view').innerHTML = '';
       return;
@@ -48,21 +45,20 @@ export default class View {
       recipe.ingredient5,
       recipe.ingredient6
     );
-
-    console.log(recipeHtml);
     document.getElementById('recipe-view').innerHTML = recipeHtml;
   }
 
+  // Function to load the recipes from local storage
   load() {
     const storage = localStorage.getItem('recipes');
     const currentId = localStorage.getItem('currentId');
-    // check if any tasks are saved or exists in localStorage, error will produce if its empty
+    // Check if any recipes are saved or exists in localStorage
     if (storage !== null) {
       const recipesJson = localStorage.getItem('recipes');
-      // Convert the tasksJson string to an array and store it in this.tasks
+      // Convert the recipesJson string to an array and store it
       this.recipes = JSON.parse(recipesJson);
     }
-    // check if the currentId is saved in localStorage
+    // Check if the currentId is saved in localStorage
     if (currentId !== null) {
       const currentId = localStorage.getItem('currentId');
       //Convert the currentId to a number before storing in this.currentId
@@ -70,11 +66,11 @@ export default class View {
     }
   }
 
-  // Save Method
+  // Function to save the recipes to local storage
   save() {
-    // Create a string for all tasks
+    // Create a string for all recipes
     let recipesJson = JSON.stringify(this.recipes);
-    // Store the string variable in local storage under key 'tasks'
+    // Store the string variable in local storage under key 'recipes'
     localStorage.setItem('recipes', recipesJson);
     // convert currentId to stirng
     let currentId = JSON.stringify(this.currentId);
@@ -82,7 +78,7 @@ export default class View {
     localStorage.setItem('currentId', currentId);
   }
 
-  // Get recipe by the id
+  // Function to get recipe ID
   getRecipeById(recipeId) {
     let foundRecipe;
     this.recipes.find(recipe => {
@@ -93,7 +89,7 @@ export default class View {
     return foundRecipe;
   }
 
-  // Delete task by id
+  // Delete recipe by ID
   deleteRecipe(recipeId) {
     let newRecipes = [];
     this.recipes.forEach(recipe => {
