@@ -6,14 +6,7 @@ recipeManager.renderPreview();
 
 const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
-const previewLink = document.getElementsByClassName('recipe-list');
-
-// [...previewLink].forEach(link =>
-//   link.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     console.log(1);
-//   })
-// );
+// const previewLink = document.getElementsByClassName('recipe-list');
 
 formElement.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -25,15 +18,25 @@ formElement.addEventListener('submit', function (e) {
   $('.btn-closemodal').trigger('click');
   recipeManager.addRecipe(data);
   recipeManager.save();
-  recipeManager.render();
+  recipeManager.renderPreview();
 });
 
 recipeList.addEventListener('click', event => {
   if (event.target.classList.contains('preview-link')) {
-    const parentEl = event.target.closest('.preview');
+    const parentEl = event.target.closest('.preview-container');
     let recipeId = Number(parentEl.dataset.recipeId);
     const recipe = recipeManager.getRecipeById(recipeId);
-    // console.log(recipe);
+    console.log(recipe);
     recipeManager.renderRecipeview(recipe);
+  }
+
+  if (event.target.classList.contains('delete-button')) {
+    const parentEl = event.target.closest('.preview-container');
+    console.log(parentEl);
+    let recipeId = Number(parentEl.dataset.recipeId);
+    recipeManager.deleteRecipe(recipeId);
+    recipeManager.save();
+    recipeManager.renderPreview();
+    recipeManager.renderRecipeview();
   }
 });

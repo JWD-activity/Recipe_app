@@ -1,13 +1,21 @@
 const createPreviewHtml = (id, title) => {
   const html = `
-  <li class="preview" data-recipe-id="${id}">
-    <a class="preview-link d-flex" href="#">
-      <i class="bi bi-star-fill"></i>
-      <div class="preview-data">
-        <h5 class="preview-title">${title}</h5>
-      </div>
-    </a>
-  </li> 
+  <div class="row preview-container" data-recipe-id="${id}">
+    <div class="col">
+      <li class="preview">
+        <a class="preview-link d-flex" href="#">
+          <i class="bi bi-star-fill"></i>
+          <div class="preview-data">
+            <h5 class="preview-title">${title}</h5>
+          </div>
+        </a>    
+      </li>    
+    </div>
+    <div class="col">
+      <span class="d-flex justify-content-center "><i class="bi bi-x-lg icon-btn delete-button"></i></span>
+    </div>
+  </div>
+  
   `;
   return html;
 };
@@ -68,7 +76,11 @@ class RecipeManager {
 
   // Render Method
   renderRecipeview(recipe) {
-    // console.log(recipeId);
+    if (!recipe) {
+      document.getElementById('recipe-view').innerHTML = '';
+      return;
+    }
+
     let recipeHtml = createRecipeViewHtml(
       recipe.id,
       recipe.title,
@@ -130,8 +142,8 @@ class RecipeManager {
   }
 
   // Delete task by id
-  deleteTask(recipeId) {
-    let newRecipeId = [];
+  deleteRecipe(recipeId) {
+    let newRecipes = [];
     this.recipes.forEach(recipe => {
       if (recipe.id !== recipeId) {
         newRecipes.push(recipe);

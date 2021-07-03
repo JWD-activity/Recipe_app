@@ -13,9 +13,15 @@ ul:last-child {
 .preview-link:hover {
   background-color: yellow;
 }
-@media only screen and (max-width: 600px) {
-  .modal-dialog {
-    max-width: 700px;
+
+@media only screen and (min-width: 1200px) {
+  .btn-submit {
+    margin-right: 2.7rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  ul {
+    padding: 0 1rem;
   }
 }
 
@@ -25,8 +31,8 @@ ul:last-child {
   }
 }
 
-@media only screen and (max-width: 1200px) {
-  ul {
-    padding: 0 1rem;
+@media only screen and (max-width: 600px) {
+  .modal-dialog {
+    max-width: 700px;
   }
 }
