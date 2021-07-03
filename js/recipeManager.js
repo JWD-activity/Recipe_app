@@ -2,17 +2,17 @@ const createPreviewHtml = (id, title) => {
   const html = `
   <div class="row preview-container" data-recipe-id="${id}">
     <div class="col">
-      <li class="preview">
-        <a class="preview-link d-flex" href="#">
-          <i class="bi bi-star-fill"></i>
+      <li class="preview text-dark">
+        <a class="text-dark preview-link d-flex" href="#">
+        <i class=" ms-2 pe-1 bi bi-caret-right-fill me-1"></i>
           <div class="preview-data">
-            <h5 class="preview-title">${title}</h5>
+            <h5 class="preview-title mb-0">${title}</h5>
           </div>
         </a>    
       </li>    
     </div>
-    <div class="col">
-      <span class="d-flex justify-content-center "><i class="bi bi-x-lg icon-btn delete-button"></i></span>
+    <div class="col-1 d-flex align-items-center">
+      <span><i class="bi bi-x-lg icon-btn delete-button"></i></span>
     </div>
   </div>
   
@@ -33,8 +33,8 @@ const createRecipeViewHtml = (
   ing6
 ) => {
   const html = `
-  <div>
-    <h5>Title: ${title}</h5>
+  <div class="py-3 px-5">
+    <h4 class="pb-3">Title: ${title}</h4>
       <p>Servings: ${servings}</p>
       <p>Prep time: ${prepTime} min</p>
       <p>Ingredient: ${ing1}</p>
