@@ -43,52 +43,62 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <!-- Modal header starts-------------------->
-        <div class="modal-header pb-1 border-0">
-          <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <!-- Modal body starts---------------------->
-        <div class="modal-body">          
-          <!-- Recipe Data------------------------->         
-          <ul class="recipe-data">
-            <form id="formData" class="row">
-              <div class="col-sm-12 col-md-6">
-                <h5 class="text-uppercase mb-4">Recipe Data</h5>
-                <!-- Title--------------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
-                  <div class="col-sm-12 col-xl-2">
+        <div class="modal-content">
+          <!-- Modal header starts-------------------->
+          <div class="modal-header pb-1 border-0">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Modal body starts---------------------->
+          <div class="modal-body">
+            <!-- Recipe Data------------------------->
+            <ul class="recipe-data">
+              <form id="formData" class="row">
+                <div class="col-sm-12 col-md-6">
+                  <h5 class="text-uppercase mb-4">Recipe Data</h5>
+                  <!-- Title--------------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
+                    <div class="col-sm-12 col-xl-2">
                       <label class="form-label">Title</label>
-                  </div>
-                  <div class="col-sm-12 col-xl-9">
+                    </div>
+                    <div class="col-sm-12 col-xl-9">
                       <input
                         class="form_input form-control"
                         aria-describedby="recipeTitle"
+                        name="title"
+                        type="text"
                         placeholder="min"
                       />
+                    </div>
                   </div>
-                </div>
-                <!-- Prep time------------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
-                  <div class="col-sm-12 col-xl-2">
+                  <!-- Prep time------------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
+                    <div class="col-sm-12 col-xl-2">
                       <label class="form-label">Prep time</label>
-                  </div>
-                  <div class="col-sm-12 col-xl-9">
-                    <input
+                    </div>
+                    <div class="col-sm-12 col-xl-9">
+                      <input
                         class="form_input form-control"
                         aria-describedby="prepTime"
+                        name="prepTime"
+                        type="text"
                         placeholder=""
                       />
+                    </div>
                   </div>
-                </div>
-                <!-- Servings------------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
+                  <!-- Servings------------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
                     <div class="col-sm-12 col-xl-2">
                       <label class="form-label">Servings</label>
                     </div>
@@ -96,110 +106,142 @@
                       <input
                         class="form_input form-control"
                         aria-describedby="servings"
+                        name="servings"
+                        type="text"
                         placeholder=""
                       />
                     </div>
+                  </div>
                 </div>
-              </div>                  
-              <div class="col-sm-12 col-md-6">
-                <h5 class="text-uppercase mb-4">Ingredients</h5>
-                <!-- Ingredient 1-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
+                <div class="col-sm-12 col-md-6">
+                  <h5 class="text-uppercase mb-4">Ingredients</h5>
+                  <!-- Ingredient 1-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
                     <div class="col-sm-12 col-xl-3">
                       <label class="form-label">Ingredient 1</label>
                     </div>
                     <div class="col-sm-12 col-xl-8">
                       <input
                         class="form_input form-control"
-                        aria-describedby="recipeTitle"
+                        aria-describedby="Ingredient1"
+                        name="Ingredient-1"
+                        type="text"
                         placeholder=""
                       />
                     </div>
-                </div>
-                <!-- Ingredient 2-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
+                  </div>
+                  <!-- Ingredient 2-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
                     <div class="col-sm-12 col-xl-3">
                       <label class="form-label">Ingredient 2</label>
                     </div>
                     <div class="col-sm-12 col-xl-8">
                       <input
                         class="form_input form-control"
-                        aria-describedby="prepTime"
+                        aria-describedby="Ingredient2"
+                        name="Ingredient-2"
+                        type="text"
                         placeholder=""
                       />
                     </div>
-                </div>
-                <!-- Ingredient 3-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
+                  </div>
+                  <!-- Ingredient 3-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
                     <div class="col-sm-12 col-xl-3">
                       <label class="form-label">Ingredient 3</label>
                     </div>
                     <div class="col-sm-12 col-xl-8">
                       <input
                         class="form_input form-control"
-                        aria-describedby="servings"
+                        aria-describedby="Ingredient3"
+                        name="Ingredient-3"
+                        type="text"
                         placeholder=""
                       />
                     </div>
-                </div>
-                <!-- Ingredient 4-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
-                  <div class="col-sm-12 col-xl-3">
-                      <label class="form-label">Ingredient 4</label>
                   </div>
-                  <div class="col-sm-12 col-xl-8">
+                  <!-- Ingredient 4-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
+                    <div class="col-sm-12 col-xl-3">
+                      <label class="form-label">Ingredient 4</label>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
                       <input
                         class="form_input form-control"
-                        aria-describedby="servings"
+                        aria-describedby="Ingredient4"
+                        name="Ingredient-4"
+                        type="text"
                         placeholder=""
                       />
+                    </div>
                   </div>
-                </div>
-                <!-- Ingredient 5-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
-                  <div class="col-sm-12 col-xl-3">
-                    <label class="form-label">Ingredient 5</label>
-                  </div>
-                  <div class="col-sm-12 col-xl-8">
-                    <input
+                  <!-- Ingredient 5-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
+                    <div class="col-sm-12 col-xl-3">
+                      <label class="form-label">Ingredient 5</label>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
+                      <input
                         class="form_input form-control"
-                        aria-describedby="servings"
+                        aria-describedby="Ingredient5"
+                        name="Ingredient-5"
+                        type="text"
                         placeholder=""
                       />
+                    </div>
                   </div>
-                </div>
-                <!-- Ingredient 6-------------------->
-                <div class="row mb-3 g-2 align-items-center form_row">
-                  <div class="col-sm-12 col-xl-3">
-                    <label class="form-label">Ingredient 6</label>
-                  </div>
-                  <div class="col-sm-12 col-xl-8">
-                    <input
+                  <!-- Ingredient 6-------------------->
+                  <div
+                    class="row mb-3 g-2 align-items-center form_row form-group"
+                  >
+                    <div class="col-sm-12 col-xl-3">
+                      <label class="form-label">Ingredient 6</label>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
+                      <input
                         class="form_input form-control"
-                        aria-describedby="servings"
+                        aria-describedby="Ingredient6"
+                        name="Ingredient-6"
+                        type="text"
                         placeholder=""
                       />
+                    </div>
                   </div>
                 </div>
-              </div>                  
-            </form>
-          </ul> 
-        </div>
-        <!-- Modal footer starts--------------------->
-        <div class="modal-footer border-0">
-          <button id="addRecipe type="button" class="btn btn-primary">ADD RECIPE</button>
-        </div>
-      
-      
+                <!--Form Submit--------------------->
+                <div class="col d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary m-3"
+                    id="submitBtn"
+                  >
+                    Add Recipe
+                  </button>
+                </div>
+              </form>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/recipeManager.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
