@@ -6,6 +6,10 @@ import recipeView from './view/recipeView.js';
 const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
 
+const clearForm = () => {
+  const formElements = document.getElementsByClassName('form-control');
+  [...formElements].forEach(input => (input.value = ''));
+};
 // Load recipes form local storage
 preview.load();
 // Render recipe list on the screen
@@ -21,6 +25,7 @@ formElement.addEventListener('submit', function (e) {
   preview.addRecipe(data);
   preview.save();
   preview.renderPreview();
+  clearForm();
 });
 
 // Click event handler of recipe list

@@ -15,6 +15,8 @@ export default class View {
 
   // Function to render a prevew list
   renderPreview() {
+    const preview = document.getElementById('recipe-preview');
+
     let previewHtmlList = [];
     this.recipes.forEach(recipe => {
       let previewHtml = this.createPreviewHtml(recipe.id, recipe.title);
@@ -23,30 +25,19 @@ export default class View {
     });
     // Join list and insert them into div tag
     let previewHtml = previewHtmlList.join('\n');
-    document.getElementById('recipe-preview').innerHTML = previewHtml;
+    preview.innerHTML = previewHtml;
   }
 
   // Function to render a preview list
   renderRecipeview(recipe) {
+    const recipeInfo = document.getElementById('recipe-view');
     if (!recipe) {
-      document.getElementById('recipe-view').innerHTML = '';
+      recipeInfo.innerHTML = '';
       return;
     }
 
-    let recipeHtml = this.createRecipeViewHtml(
-      recipe
-      // recipe.id,
-      // recipe.title,
-      // recipe.prepTime,
-      // recipe.servings,
-      // recipe.ingredient1,
-      // recipe.ingredient2,
-      // recipe.ingredient3,
-      // recipe.ingredient4,
-      // recipe.ingredient5,
-      // recipe.ingredient6
-    );
-    document.getElementById('recipe-view').innerHTML = recipeHtml;
+    let recipeHtml = this.createRecipeViewHtml(recipe);
+    recipeInfo.innerHTML = recipeHtml;
   }
 
   // Function to load the recipes from local storage
@@ -69,13 +60,10 @@ export default class View {
 
   // Function to save the recipes to local storage
   save() {
-    // Create a string for all recipes
     let recipesJson = JSON.stringify(this.recipes);
-    // Store the string variable in local storage under key 'recipes'
     localStorage.setItem('recipes', recipesJson);
-    // convert currentId to stirng
+
     let currentId = JSON.stringify(this.currentId);
-    // Store the string variable in local storage under key 'currentId'
     localStorage.setItem('currentId', currentId);
   }
 
