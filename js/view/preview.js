@@ -17,8 +17,7 @@ class Preview extends View {
       <div class="col-1 d-flex align-items-center">
         <span><i class="bi bi-x-lg icon-btn delete-button"></i></span>
       </div>
-    </div>
-    
+    </div>    
     `;
     return html;
   }

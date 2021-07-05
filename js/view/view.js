@@ -34,16 +34,17 @@ export default class View {
     }
 
     let recipeHtml = this.createRecipeViewHtml(
-      recipe.id,
-      recipe.title,
-      recipe.prepTime,
-      recipe.servings,
-      recipe.ingredient1,
-      recipe.ingredient2,
-      recipe.ingredient3,
-      recipe.ingredient4,
-      recipe.ingredient5,
-      recipe.ingredient6
+      recipe
+      // recipe.id,
+      // recipe.title,
+      // recipe.prepTime,
+      // recipe.servings,
+      // recipe.ingredient1,
+      // recipe.ingredient2,
+      // recipe.ingredient3,
+      // recipe.ingredient4,
+      // recipe.ingredient5,
+      // recipe.ingredient6
     );
     document.getElementById('recipe-view').innerHTML = recipeHtml;
   }
