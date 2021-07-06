@@ -27,12 +27,12 @@ formElement.addEventListener('submit', function (e) {
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
   const data = Object.fromEntries(dataArr);
   // console.log(data);
-
   $('.btn-closemodal').trigger('click');
 
-  preview.addRecipe(data);
-  preview.renderPreview();
   preview.save();
+  preview.addRecipe(data);
+  preview.renderPreview(data.id);
+  recipeView.renderRecipeview(data);
   clearForm();
 });
 
