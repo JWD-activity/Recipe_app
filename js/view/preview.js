@@ -10,9 +10,9 @@ class Preview extends View {
           <a class="${
             clickedId === id ? 'preview-link-active' : ''
           } text-dark preview-link d-flex" href="#">
-          <i class=" ms-2 pe-1 bi bi-caret-right-fill me-1"></i>
+          <i class="bi bi-caret-right-fill d-flex align-items-center"></i>
             <div class="preview-data">
-              <h5 class="preview-title mb-0">${title}</h5>
+              <h5 class="preview-title mb-0 preview-link">${title}</h5>
             </div>
           </a>    
         </li>    

@@ -41,7 +41,7 @@ recipeList.addEventListener('click', event => {
   const listItem = event.target.classList.contains('preview-link');
   const deleteBtn = event.target.classList.contains('delete-button');
   const parentEl = event.target.closest('.preview-container');
-
+  console.log(listItem);
   // When recipe preview(recipe list) is clicked
   if (listItem) {
     const recipe = preview.getRecipeById(Number(parentEl.dataset.recipeId));

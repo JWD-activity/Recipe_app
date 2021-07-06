@@ -1,27 +1,23 @@
+a {
+  text-decoration: none;
+}
+
+ul:last-child {
+  padding-bottom: 1.5rem;
+}
+/* Recipe list section */
 .recipe-list {
   background-color: #f9f5f3d8;
   height: 100vh;
 }
 
-.recipe-info {
-  background-color: #f9f5f35b;
-}
-.form_row {
-  margin-bottom: 3rem;
-}
-a {
-  text-decoration: none;
-}
-ul:last-child {
-  padding-bottom: 1.5rem;
-}
 .preview-link,
 .delete-link {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .preview-link-active,
 .preview-link:hover {
-  background-color: #d3c7c357;
+  background-color: #ede7e4;
 }
 
 .delete-button:hover {
@@ -29,11 +25,23 @@ ul:last-child {
   cursor: pointer;
 }
 
+/* Recipe information section */
+.recipe-info {
+  background-color: #f9f5f35b;
+}
+
+/* Modal form */
+.form_row {
+  margin-bottom: 3rem;
+}
+
+/* Media queries */
 @media only screen and (min-width: 1200px) {
   .btn-submit {
     margin-right: 2.7rem;
   }
 }
+
 @media only screen and (max-width: 1200px) {
   ul {
     padding: 0 1rem;
