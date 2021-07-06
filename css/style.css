@@ -2,6 +2,10 @@
   background-color: #f9f5f3d8;
   height: 100vh;
 }
+
+.recipe-info {
+  background-color: #f9f5f35b;
+}
 .form_row {
   margin-bottom: 3rem;
 }
@@ -15,6 +19,7 @@ ul:last-child {
 .delete-link {
   padding: 1rem;
 }
+.preview-link-active,
 .preview-link:hover {
   background-color: #d3c7c357;
 }

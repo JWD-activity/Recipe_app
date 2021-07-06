@@ -1,12 +1,14 @@
 import View from './view.js';
 
 class Preview extends View {
-  createPreviewHtml(id, title) {
+  createPreviewHtml(clickedId, id, title) {
     const html = `
     <div class="row preview-container" data-recipe-id="${id}">
       <div class="col">
         <li class="preview text-dark">
-          <a class="text-dark preview-link d-flex" href="#">
+          <a class="${
+            clickedId === id ? 'preview-link-active' : ''
+          } text-dark preview-link d-flex" href="#">
           <i class=" ms-2 pe-1 bi bi-caret-right-fill me-1"></i>
             <div class="preview-data">
               <h5 class="preview-title mb-0">${title}</h5>
@@ -24,3 +26,6 @@ class Preview extends View {
 }
 
 export default new Preview();
+// ${
+//   clickedId === id ? 'preview-link-active' : ''
+// }

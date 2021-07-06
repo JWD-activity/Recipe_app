@@ -6,10 +6,12 @@ import recipeView from './view/recipeView.js';
 const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
 
+// Function to clear the forms in modal
 const clearForm = () => {
   const formElements = document.getElementsByClassName('form-control');
   [...formElements].forEach(input => (input.value = ''));
 };
+
 // Load recipes form local storage
 preview.load();
 // Render recipe list on the screen
@@ -33,10 +35,11 @@ recipeList.addEventListener('click', event => {
   const listItem = event.target.classList.contains('preview-link');
   const deleteBtn = event.target.classList.contains('delete-button');
   const parentEl = event.target.closest('.preview-container');
-
   // When list item is clicked
   if (listItem) {
     const recipe = preview.getRecipeById(Number(parentEl.dataset.recipeId));
+    // preview.getClickedRecipe(recipe.id);
+    preview.renderPreview(recipe.id);
     recipeView.renderRecipeview(recipe);
   }
 

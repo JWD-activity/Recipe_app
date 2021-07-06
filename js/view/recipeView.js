@@ -6,12 +6,27 @@ class RecipeView extends View {
     <div class="py-3 px-5">
       <h4 class="pb-3">Title: ${recipe.title}</h4>
         <h5>Servings</h5>
-          <p>${recipe.servings}</p>
+          <ul>
+            <li>${
+              recipe.servings.trim()
+                ? recipe.servings.trim() + ' servings'
+                : 'You did not enter the servings.'
+            } </li>
+          </ul>          
         <h5>Prep time</h5>
-          <p>${recipe.prepTime} min</p>
+          <ul>
+            <li>${
+              recipe.prepTime.trim()
+                ? recipe.prepTime.trim() + ' min'
+                : 'You did not enter the prep time.'
+            } </li>
+          </ul> 
         <h5>Ingredient</h5>
         <ul>
-          ${this.renderIngredient(recipe).join('')}
+          ${
+            this.renderIngredient(recipe).join('') ||
+            ' <li>You did not enter the Ingredients.</li>'
+          }
         </ul>
     </div>
     `;

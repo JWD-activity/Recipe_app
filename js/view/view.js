@@ -14,12 +14,16 @@ export default class View {
   }
 
   // Function to render a prevew list
-  renderPreview() {
+  renderPreview(clickedId = '') {
     const preview = document.getElementById('recipe-preview');
 
     let previewHtmlList = [];
     this.recipes.forEach(recipe => {
-      let previewHtml = this.createPreviewHtml(recipe.id, recipe.title);
+      let previewHtml = this.createPreviewHtml(
+        clickedId,
+        recipe.id,
+        recipe.title
+      );
       // Push recipe into array
       previewHtmlList.push(previewHtml);
     });
@@ -66,6 +70,10 @@ export default class View {
     let currentId = JSON.stringify(this.currentId);
     localStorage.setItem('currentId', currentId);
   }
+
+  // getClickedRecipe(id) {
+  //   return id;
+  // }
 
   // Function to get recipe ID
   getRecipeById(recipeId) {
