@@ -5,11 +5,40 @@ import recipeView from './view/recipeView.js';
 // Selectors
 const recipeList = document.getElementById('recipe-preview');
 const formElement = document.getElementById('formData');
+const message_title = document.getElementById('message-title');
+const message_num = document.getElementById('message-num');
 
 // Function to clear the forms in modal
 const clearForm = () => {
   const formElements = document.getElementsByClassName('form-control');
   [...formElements].forEach(input => (input.value = ''));
+  message_title.textContent =
+    message_time.textContent =
+    message_servings.textContent =
+      '';
+};
+
+// Function for valid text
+const isValidText = input => {
+  if (!input.trim()) {
+    message_title.textContent = 'Please enter the recipe title';
+    return false;
+  } else {
+    message_title.textContent = '';
+    return true;
+  }
+};
+
+// Function for valid number
+const isValidNumber = input => {
+  if (!Number(input) || Number(input) < 1) {
+    message_num.textContent =
+      'Please enter valid number( for Prep time and servings)';
+    return false;
+  } else {
+    message_num.textContent = '';
+    return true;
+  }
 };
 
 // Load recipes form local storage
@@ -27,13 +56,19 @@ formElement.addEventListener('submit', function (e) {
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
   const data = Object.fromEntries(dataArr);
   // console.log(data);
-  $('.btn-closemodal').trigger('click');
 
-  preview.save();
-  preview.addRecipe(data);
-  preview.renderPreview(data.id);
-  recipeView.renderRecipeview(data);
-  clearForm();
+  if (
+    isValidText(data.title) &&
+    isValidNumber(data.prepTime) &&
+    isValidNumber(data.servings)
+  ) {
+    $('.btn-closemodal').trigger('click');
+    preview.save();
+    preview.addRecipe(data);
+    preview.renderPreview(data.id);
+    recipeView.renderRecipeview(data);
+    clearForm();
+  }
 });
 
 // Click event handler of recipe list

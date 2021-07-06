@@ -35,6 +35,11 @@ ul:last-child {
   margin-bottom: 3rem;
 }
 
+#message-title,
+#message-num {
+  color: #dc3545;
+}
+
 /* Media queries */
 @media only screen and (min-width: 1200px) {
   .btn-submit {
