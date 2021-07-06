@@ -20,13 +20,19 @@ preview.renderPreview();
 // Sumbit event handler
 formElement.addEventListener('submit', function (e) {
   e.preventDefault();
+  // https://developer.mozilla.org/en-US/docs/Web/API/FormData
+  // Set of key/value pairs representing form fields and their values
   const dataArr = [...new FormData(formElement)];
+  // console.log(dataArr);
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
   const data = Object.fromEntries(dataArr);
+  // console.log(data);
 
   $('.btn-closemodal').trigger('click');
+
   preview.addRecipe(data);
-  preview.save();
   preview.renderPreview();
+  preview.save();
   clearForm();
 });
 
@@ -35,23 +41,26 @@ recipeList.addEventListener('click', event => {
   const listItem = event.target.classList.contains('preview-link');
   const deleteBtn = event.target.classList.contains('delete-button');
   const parentEl = event.target.closest('.preview-container');
-  // When list item is clicked
+
+  // When recipe preview(recipe list) is clicked
   if (listItem) {
     const recipe = preview.getRecipeById(Number(parentEl.dataset.recipeId));
-    // preview.getClickedRecipe(recipe.id);
+    // Display the selected recipe as active
     preview.renderPreview(recipe.id);
+    // Display the information of selected recipe
     recipeView.renderRecipeview(recipe);
   }
 
   // When delete btton is clicked
   if (deleteBtn) {
     let recipeId = Number(parentEl.dataset.recipeId);
-    preview.deleteRecipe(recipeId);
-    const recipe = preview.getRecipeById(recipeId);
     // Remove delete item and save to local storage
+    preview.deleteRecipe(recipeId);
     preview.save();
-    // Re-render preview list and recipe info view
+    // Re-render preview list
     preview.renderPreview();
+    // Re-render recipe info view
+    const recipe = preview.getRecipeById(recipeId);
     recipeView.renderRecipeview(recipe);
   }
 });

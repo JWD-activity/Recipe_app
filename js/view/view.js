@@ -13,7 +13,7 @@ export default class View {
     this.recipes.push(inputData);
   }
 
-  // Function to render a prevew list
+  // Function to render a recipe prevew list
   renderPreview(clickedId = '') {
     const preview = document.getElementById('recipe-preview');
 
@@ -32,7 +32,7 @@ export default class View {
     preview.innerHTML = previewHtml;
   }
 
-  // Function to render a preview list
+  // Function to render a recipe infomation
   renderRecipeview(recipe) {
     const recipeInfo = document.getElementById('recipe-view');
     if (!recipe) {
@@ -51,13 +51,11 @@ export default class View {
     // Check if any recipes are saved or exists in localStorage
     if (storage !== null) {
       const recipesJson = localStorage.getItem('recipes');
-      // Convert the recipesJson string to an array and store it
       this.recipes = JSON.parse(recipesJson);
     }
     // Check if the currentId is saved in localStorage
     if (currentId !== null) {
       const currentId = localStorage.getItem('currentId');
-      //Convert the currentId to a number before storing in this.currentId
       this.currentId = parseInt(currentId);
     }
   }
@@ -70,10 +68,6 @@ export default class View {
     let currentId = JSON.stringify(this.currentId);
     localStorage.setItem('currentId', currentId);
   }
-
-  // getClickedRecipe(id) {
-  //   return id;
-  // }
 
   // Function to get recipe ID
   getRecipeById(recipeId) {

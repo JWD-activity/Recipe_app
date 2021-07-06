@@ -1,5 +1,6 @@
 import View from './view.js';
 
+// class for recipe information view
 class RecipeView extends View {
   createRecipeViewHtml = recipe => {
     const html = `
@@ -33,6 +34,7 @@ class RecipeView extends View {
     return html;
   };
 
+  // Function for listing ingredients
   renderIngredient(recipe) {
     let ingredients = [];
     for (const property in recipe) {
@@ -40,8 +42,8 @@ class RecipeView extends View {
         ingredients.push(`<li>${recipe[property]}</li>`);
       }
     }
-    // console.log(ingredients);
     return ingredients;
   }
 }
+
 export default new RecipeView();

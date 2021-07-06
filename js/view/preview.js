@@ -1,5 +1,6 @@
 import View from './view.js';
 
+// class for recipe preview
 class Preview extends View {
   createPreviewHtml(clickedId, id, title) {
     const html = `
@@ -26,6 +27,3 @@ class Preview extends View {
 }
 
 export default new Preview();
-// ${
-//   clickedId === id ? 'preview-link-active' : ''
-// }
