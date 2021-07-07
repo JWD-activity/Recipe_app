@@ -12,10 +12,7 @@ const message_num = document.getElementById('message-num');
 const clearForm = () => {
   const formElements = document.getElementsByClassName('form-control');
   [...formElements].forEach(input => (input.value = ''));
-  message_title.textContent =
-    message_time.textContent =
-    message_servings.textContent =
-      '';
+  message_title.textContent = message_num.textContent = '';
 };
 
 // Function for valid text
@@ -52,7 +49,7 @@ formElement.addEventListener('submit', function (e) {
   // https://developer.mozilla.org/en-US/docs/Web/API/FormData
   // Set of key/value pairs representing form fields and their values
   const dataArr = [...new FormData(formElement)];
-  // console.log(dataArr);
+  console.log(dataArr);
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
   const data = Object.fromEntries(dataArr);
   // console.log(data);
