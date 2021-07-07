@@ -60,8 +60,8 @@ formElement.addEventListener('submit', function (e) {
     isValidNumber(data.servings)
   ) {
     $('.btn-closemodal').trigger('click');
-    preview.save();
     preview.addRecipe(data);
+    preview.save();
     preview.renderPreview(data.id);
     recipeView.renderRecipeview(data);
     clearForm();
