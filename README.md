@@ -2,10 +2,10 @@
 https://jwd-activity.github.io/Recipe_app/
 
 ## Technologies used
-![Generic badge](https://img.shields.io/badge/HTML-blue.svg)
-![Generic badge](https://img.shields.io/badge/CSS-brightgreen.svg) 
+![Generic badge](https://img.shields.io/badge/HTML-E96228.svg)
+![Generic badge](https://img.shields.io/badge/CSS-264DE4.svg) 
 ![Generic badge](https://img.shields.io/badge/Bootstrap-blueviolet.svg)
-![Generic badge](https://img.shields.io/badge/JavaScript-yellow.svg)
+![Generic badge](https://img.shields.io/badge/JavaScript-EFD81D.svg)
 
 ## Description
 The purpose of this app is to make it easier for users to manage their recipes.
